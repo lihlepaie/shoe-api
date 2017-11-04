@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.min.js"></script>
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="css/shoe-catalogue.css">
+    <!-- <script src="handlebars-v4.0.5.js" charset "utf-8"></script>  -->
+  </head>
+  <body>
+
+    <div class="container">
+        <script class="myTemplate" type="text/x-handlebars-template">
+
+            <div class="dis">
+
+                {{#each shoes}}
+
+                <div class="left">
+                  <div>brand: {{brand}}</div>
+                  <div>color: {{color}}</div>
+                    <div>price: {{price}}</div>
+                    <div>size: {{size}}</div>
+                    <div>in_stock: {{in_stock}}</div>
+
+                    <div class="right">
+                        <img src="{{image}}" />
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </script>
+        <h1>Shoe-catalogue</h1>
+
+        <input type="button" class="shoeStock" value="searchShoes">
+        <br>
+        <br>
+        <select class="selectSize" name="select">
+
+          <script class="myTemplate1" type="text/x-handlebars-template">
+
+                 <option selected disabled="disabled">select size</option>
+                    <option value="All">All</option>
+                   {{#each shoes}}
+                   <option value="{{size}}">{{size}}></option>
+                   {{/each}}
+
+               </script>
+             </select >
+
+
+             <select class="selectColor" name="select">
+               <script class="myTemplate2" type="text/x-handlebars-template">
+
+                      <option selected disabled="disabled">select color</option>
+                        {{#each shoes}}
+                        <option value="{{color}}">{{color}}</option>
+                        {{/each}}
+
+                    </script>
+                  </select >
+
+
+                  <select class="selectBrand" name="select">
+                    <script class="myTemplate3" type="text/x-handlebars-template">
+
+                           <option selected disabled="disabled">select brand</option>
+                             {{#each shoes}}
+                             <option value="{{brand}}">{{brand}}</option>
+                             {{/each}}
+
+                         </script>
+                       </select >
+
+
+        <div class="myshoeSize">
+        </div>
+
+        <div class="display">
+        </div>
+
+      <div class="more">
+      <div class="addbttn">
+            <input type="file" class="bttn" name="bttn" placceholder="image">
+            <input type="button" class='addBtn' value="add new stock"><br>
+            <input type="text" id= "size"  name="size"  placeholder="add size"><br>
+            <input type="text" id= "color" name="color" placeholder="add color"><br>
+            <input type="text" id= "in_stock" name="in_stock" placeholder="add stock"><br>
+            <input type="text" id= "price" name="price" placeholder="add price"><br>
+            <input type="text" id= "brand" name="brand" placeholder="add brand"><br>
+
+       </div>
+     </div>
+
+        <div class="dropdown">
+    <div class="size">
+      <div class="color">
+        <div class="brand"></div>
+      </div>
+
+    </div>
+
+      <div class="color">
+        <div class="brand"></div>
+      </div>
+
+    <script src="shoe.js" charset="utf-8"></script>
+
+
+
+  </body>
+</html>

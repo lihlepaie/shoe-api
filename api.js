@@ -17,7 +17,7 @@ module.exports = function(models) {
         console.log(stock);
 
             models.shoeSchema.create({
-              brand:stock.brand,
+              brand : stock.brand,
               color:stock.color,
               price:stock.price,
               size:stock.size,
