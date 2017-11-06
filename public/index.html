@@ -2,9 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-
-
-
+    
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.min.js"></script>
     <title></title>
@@ -40,43 +38,32 @@
         <input type="button" class="shoeStock" value="searchShoes">
         <br>
         <br>
-        <select class="selectSize" name="select">
+          <label>color</label> : <select class="selectColor">
+            <script class="TemplateDrop" type="text/handlebars-x">
+            <option value="selector color" class="color" disabled selected>Select color</option>
+            {{#each shoes}}
+            <option name="brand" >{{this}}</option>
+            {{/each}}
+            </script>
+     </select>
 
-          <script class="myTemplate1" type="text/x-handlebars-template">
+            <label>size</label> : <select class="selectSize">
+              <script class="TemplateDrop" type="text/handlebars-x">
+              <option value="selector size" class="size" disabled selected>Select size</option>
+              {{#each shoes}}
+              <option name="brand" >{{this}}</option>
+              {{/each}}
+              </script>
+             </select>
 
-                 <option selected disabled="disabled">select size</option>
-                    <option value="All">All</option>
-                   {{#each shoes}}
-                   <option value="{{size}}">{{size}}></option>
-                   {{/each}}
-
+             <label>brand</label> : <select class="selectBrand">
+               <script class="TemplateDrop" type="text/handlebars-x">
+               <option value="selector brand" class="size" disabled selected>Select brand</option>
+               {{#each shoes}}
+               <option name="brand" >{{this}}</option>
+               {{/each}}
                </script>
-             </select >
-
-
-             <select class="selectColor" name="select">
-               <script class="myTemplate2" type="text/x-handlebars-template">
-
-                      <option selected disabled="disabled">select color</option>
-                        {{#each shoes}}
-                        <option value="{{color}}">{{color}}</option>
-                        {{/each}}
-
-                    </script>
-                  </select >
-
-
-                  <select class="selectBrand" name="select">
-                    <script class="myTemplate3" type="text/x-handlebars-template">
-
-                           <option selected disabled="disabled">select brand</option>
-                             {{#each shoes}}
-                             <option value="{{brand}}">{{brand}}</option>
-                             {{/each}}
-
-                         </script>
-                       </select >
-
+              </select>
 
         <div class="myshoeSize">
         </div>
@@ -111,6 +98,6 @@
 
     <script src="shoe.js" charset="utf-8"></script>
 
-    
+
   </body>
 </html>
