@@ -61,10 +61,32 @@ var TemplateInstance = Handlebars.compile(myTemplate.innerHTML);
       url:'/api/shoes',
       datatype:'json',
       data : newdata,
-      success:function(addBtn){
-    display.innerHTML =TemplateInstance({shoes:addBtn})
+      success:function(shoeData){
+    display.innerHTML =TemplateInstance({shoes:shoeData})
       }
     })
 
-    })
+
+    var myDropdown = Handlebars.compile(sizedrpDwn.innerHTML);
+    var results = myDropdown({
+      shoes: shoes
+    });
+    var sizeSelected = document.querySelector('.selectSize');
+    sizeSelected.innerHTML = results;
+
+    var myDropdown = Handlebars.compile(colordrpDwn.innerHTML);
+    var results = myDropdown({
+      shoes: shoes
+    });
+    var colors = document.querySelector('.selectColor');
+    colors.innerHTML = results;
+
+    var myDropdown = Handlebars.compile(brandDrpDwn.innerHTML);
+    var results = myDropdown({
+      shoes: shoes
+    });
+    var brand = document.querySelector('.selectBrand')
+    brand.innerHTML = results;
+
+})
 })
