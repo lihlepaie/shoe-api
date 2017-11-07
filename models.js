@@ -14,7 +14,8 @@ module.exports = function(mongoUrl) {
       color : String,
       price : Number,
       size : Number,
-      in_stock : Number
+      in_stock : Number,
+      imagePath :String
 
     });
 

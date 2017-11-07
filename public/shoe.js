@@ -1,19 +1,20 @@
 $(function() {
 
-    var sizedrpDwn = document.querySelector('.myTemplate1')
-    var colordrpDwn = document.querySelector('.myTemplate2')
-    var brandDrpDwn = document.querySelector('.myTemplate3')
+    // var Sizes = document.querySelector('.')
+    var sizeFilter = document.querySelector('#sizeFilter')
+    var Sizes = document.querySelector('#Sizes')
+    var brandFilter = document.querySelector('#brandFilter')
+    var Brand = document.querySelector('#Brand')
+
     var colors = document.querySelector('.color');
     var brand = document.querySelector('.brand')
-    var sizeSelected = document.querySelector('.sizes');
-    var searchShoes = document.querySelector('.shoeStock')
     var li = document.querySelector('.li')
     var shoe = document.querySelector('.shoeData')
     var myshoeSize = document.querySelector('.myshoeSize')
     var result = document.querySelector('.results')
     var addbttn = document.querySelector('.addBtn')
     var bttn = document.querySelector('.bttn')
-    var image = document.querySelector('.bttn')
+    var img = document.querySelector('.image')
     var display = document.querySelector('.display')
 
 
@@ -41,34 +42,60 @@ $(function() {
 
     addbttn.addEventListener('click', function() {
 
-        // var imagePath = image.value.substring(12)
-        var size = add_size.value;
-        var color = add_color.value;
-        var stock = in_stock.value;
-        var price = add_price.value;
-        var brand = add_brand.value
-        console.log(brand);
-        // if (add_color !== undefined && add_size !== undefined && add_brand !== undefined && add_price !== undefined && in_stock !== undefined) {
+      var size = add_size.value;
+      var color = add_color.value;
+      var stock = in_stock.value;
+      var price = add_price.value;
+      var brand = add_brand.value;
+      // var image = imagePath.value
 
-        var newdata = {
-            color: color,
-            size: size,
-            brand: brand,
-            price: price,
-            in_stock: stock
-            // image: imagePath,
+      // if (add_color !== undefined && add_size !== undefined && add_brand !== undefined && add_price !== undefined && in_stock !== undefined) {
+
+      var newdata = {
+        color: color,
+        size: size,
+        brand: brand,
+        price: price,
+        in_stock: stock,
+        img: image
+      }
+      $.ajax({
+        type: 'POST',
+        url: '/api/shoes',
+        datatype: 'json',
+        data: newdata,
+        success: function(shoeData) {
+          display.innerHTML = TemplateInstance({
+            shoes: shoeData
+          })
+
         }
-        $.ajax({
-            type: 'POST',
-            url: '/api/shoes',
-            datatype: 'json',
-            data: newdata,
-            success: function(shoeData) {
-                display.innerHTML = TemplateInstance({
-                    shoes: shoeData
-                })
-            }
-        })
 
-    })
+      })
+
+  })
+
+Sizes.addEventListener('click', function() {
+  var size = sizeFilter.value;
+  $.ajax({
+    type: 'GET',
+    url: '/api/shoes/size/' + size,
+    datatype: 'json',
+    success: function(shoeData) {
+ display.innerHTML = TemplateInstance({shoes: shoeData})
+}
+})
+})
+
+Brand.addEventListener('click', function() {
+  var brand = brandFilter.value;
+  $.ajax({
+    type: 'GET',
+    url: '/api/shoes/brand/' + brand,
+    datatype: 'json',
+    success: function(shoeData) {
+ display.innerHTML = TemplateInstance({shoes: shoeData})
+}
+})
+})
 })
