@@ -6,51 +6,53 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.min.js"></script>
+  </head>
     <title></title>
 
     <link rel="stylesheet" type="text/css" href="css/shoe-catalogue.css">
-    <!-- <script src="handlebars-v4.0.5.js" charset "utf-8"></script>  -->
+
 <body>
 
-            <div class="dis">
+      <script class="myTemplate" type="text/x-handlebars-template">
+<table>
+        <tbody>
+        <thead>
+        <th>brand</th>
+        <th>color</th>
+        <th>price</th>
+        <th>size</th>
+        <th>in_stock</th>
 
-              <script class="myTemplate" type="text/x-handlebars-template">
-                {{#each shoes}}
-
-                <div class="left">
-                    <div>brand: {{brand}}</div>
-                    <div>color: {{color}}</div>
-                    <div>price: {{price}}</div>
-                    <div>size: {{size}}</div>
-                    <div>in_stock: {{in_stock}}</div>
-
-                    <div class="right">
-                  <img src ={{imgage}}>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
+        <tr>
+          {{#each shoes}}
+            <td>{{brand}}</td>
+            <td>{{color}}</td>
+            <td>{{price}}</td>
+            <td>{{size}}</td>
+            <td>{{in_stock}}</td>
+</tr>
+      {{/each}}
+    </thead>
+  </tbody>
+  </table>
         </script>
         <h1>Shoe-catalogue</h1>
 
             <div class="addbttn">
-                <!-- <input type="file" class="bttn" name="bttn" placceholder="image"> -->
-                <input type="number" id="size" name="size" placeholder="add size">
-                <input type="text" id="color" name="color" placeholder="add color">
-                <input type="number" id="in_stock" name="in_stock" placeholder="add stock">
-                <input type="number" id="price" name="price" placeholder="add price" >
-                <input type="text" id="brand" name="brand" placeholder="add brand">
-                <input type="text" id="image" name="image" placeholder="add image">
-                <input type="button" class='addBtn' value="add new stock">
+
+  <input type="number" id="size" name="size" placeholder="add size">
+  <input type="text" id="color" name="color" placeholder="add color">
+  <input type="number" id="in_stock" name="in_stock" placeholder="add stock">
+  <input type="number" id="price" name="price" placeholder="add price" >
+  <input type="text" id="brand" name="brand" placeholder="add brand">
+  <input type="button" class='addBtn' value="add new stock">
             </div>
             <br>
 
-        <!-- <input type="button" class="shoeStock" value="searchShoes"> -->
-
   Size Filter:<input type="text" id="sizeFilter" name="name" value="">
- <input type="submit" id="Sizes"name="name" value="">
+ <input type="submit" id="Sizes"name="name" value="search">
  Brand filter:<input type="text" id="brandFilter" name="name" value="">
- <input type="submit" id="Brand" name="name" value= ''><br></br>
+ <input type="submit" id="Brand" name="name" value="search"><br></br>
 
         <div class="myshoeSize">
         </div>
@@ -64,6 +66,5 @@
 
             <script src="shoe.js" charset="utf-8"></script>
 
-</head>
 </body>
 </html>

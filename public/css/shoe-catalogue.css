@@ -1,5 +1,8 @@
+body{
+  background-color: #876887;
+}
+
 .container {
-    /*background-image: url("blue.jpeg");*/
     height: 600px;
     background-color: #876887;
     height: 2000px;
@@ -33,13 +36,31 @@ img {
   text-color:white;
 
 }
-table, th, td {
-    border: 1px solid #444999;
-    widht:50px;
-    height: 40px;
-    text-align: right;
-    font-size: 30px;
-    color: white;
+
+h1 {
+    margin: 0 0 10px 0;
+    padding: 5px;
+    font-size: 24px;
+    color: #fff;
+}
+table {
+    margin: 10px;
+    text-align: center;
+}
+th, td {
+    padding: 5px;
+    border: 1px solid #999;
+}
+th {
+    background: #ccc;
+}
+/*tr:nth-child(odd) {
+    background: #eee;
+}*/
+td a {
+    /*color: #000;*/
+    text-decoration: underline;
+}
 }
 .more{
   text-align: right;
