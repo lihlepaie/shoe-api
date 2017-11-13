@@ -1,6 +1,10 @@
 body{
   background-color: #876887;
+/*background-image: url('flops.jpg');
+background-repeat: : no-repeat;
+background-size: contain;*/
 }
+
 
 .container {
     height: 600px;

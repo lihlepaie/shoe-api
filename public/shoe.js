@@ -20,19 +20,23 @@ $(function() {
 
 
     var myTemplate = document.querySelector(".myTemplate");
-    var TemplateInstance = Handlebars.compile(myTemplate.innerHTML)
+    var TemplateInstance = Handlebars.compile(myTemplate.innerHTML);
 
-    $.ajax({
-        type: 'GET',
-        url: '/api/shoes',
-        datatype: 'json',
-        success: function(shoeData) {
-            display.innerHTML = TemplateInstance({
-                shoes: shoeData
-            })
-        }
+    function showSock() {
+        $.ajax({
+            type: 'GET',
+            url: '/api/shoes',
+            datatype: 'json',
+            success: function(shoeData) {
+                display.innerHTML = TemplateInstance({
+                    shoes: shoeData
+                })
+            }
 
-    })
+        })
+    }
+    showSock();
+
 
     var add_size = document.querySelector('#size')
     var add_color = document.querySelector('#color')
@@ -65,6 +69,7 @@ $(function() {
             datatype: 'json',
             data: newdata,
             success: function(shoeData) {
+                showSock();
                 display.innerHTML = TemplateInstance({
                     shoes: shoeData
                 })
@@ -74,8 +79,9 @@ $(function() {
             // }
 
         })
-
     })
+
+
 
     Sizes.addEventListener('click', function() {
         var size = sizeFilter.value;
@@ -97,35 +103,13 @@ $(function() {
             type: 'GET',
             url: '/api/shoes/brand/' + brand,
             datatype: 'json',
+
             success: function(shoeData) {
                 display.innerHTML = TemplateInstance({
                     shoes: shoeData
                 })
             }
-
         })
     })
-
-    $('#displayTableStock').on('click', function(e){
-       var sold = e.target.value;
-       $.ajax({
-         type: "POST",
-         url: "/api/shoes/sold/" +sold,
-         dataType: 'json',
-         success: function(oders) {}
-       })
-})
-
-       $('#displayTableStock').on('click', function(e){
-           var sold = e.target.value;
-           $.ajax({
-               type: "POST",
-               url: "/api/shoes/sold/" + sold,
-               dataType: 'json',
-          success: function(oders) {}
-
-})
-})
-
 
 })
