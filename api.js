@@ -72,8 +72,9 @@ module.exports = function(models) {
         if (err) {
           return next(err)
         }
-        res.json(results)
+        // res.json(results)
       })
+
       if (results.in_stock <= 1) {
         results.remove()
       }else{

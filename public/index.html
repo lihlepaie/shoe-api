@@ -12,9 +12,9 @@
     <link rel="stylesheet" type="text/css" href="css/shoe-catalogue.css">
 
 <body>
-  
+
       <script class="myTemplate" type="text/x-handlebars-template">
-<table>
+<table align="left">
         <tbody>
         <thead>
         <th>brand</th>
@@ -22,6 +22,8 @@
         <th>price</th>
         <th>size</th>
         <th>in_stock</th>
+        <th>Purchase</th>
+
 
         <tr>
           {{#each shoes}}
@@ -30,6 +32,8 @@
             <td>{{price}}</td>
             <td>{{size}}</td>
             <td>{{in_stock}}</td>
+
+
             <td>
 <button class="btn btn-info btn-lg" onclick="window.location.reload()" value="{{_id}}">Buy</button>
 </td>

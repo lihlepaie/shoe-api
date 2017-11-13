@@ -1,15 +1,8 @@
 body{
-  background-color: #876887;
-/*background-image: url('flops.jpg');
+  /*background-color: #876887;*/
+background-image: url('https://thumb1.shutterstock.com/display_pic_with_logo/980054/273277409/stock-photo-beach-accessories-on-wooden-board-copy-spase-273277409.jpg');
 background-repeat: : no-repeat;
-background-size: contain;*/
-}
-
-
-.container {
-    height: 600px;
-    background-color: #876887;
-    height: 2000px;
+background-size: cover;
 }
 
 h1 {
@@ -19,28 +12,6 @@ h1 {
     background-color: #876887;
 }
 
-.newShoe {
-    text-align: right;
-}
-
-img {
-    transition-property: 50px;
-    width: 200px;
-    height: 200px;
-}
-.left{
-  width:50%;
-  float: left;
-  /*display:inline-block;*/
-  /*color: white;*/
-}
-.right{
-  float: left;
-  width: 50%;
-  text-color:white;
-
-}
-
 h1 {
     margin: 0 0 10px 0;
     padding: 5px;
@@ -48,8 +19,9 @@ h1 {
     color: #fff;
 }
 table {
-    margin: 10px;
+    /*margin: auto;*/
     text-align: center;
+
 }
 th, td {
     padding: 5px;
@@ -62,10 +34,6 @@ th {
     background: #eee;
 }*/
 td a {
-    /*color: #000;*/
-    text-decoration: underline;
-}
-}
-value{
 
+    /*text-decoration: underline;*/
 }
