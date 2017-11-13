@@ -105,4 +105,27 @@ $(function() {
 
         })
     })
+
+    $('#displayTableStock').on('click', function(e){
+       var sold = e.target.value;
+       $.ajax({
+         type: "POST",
+         url: "/api/shoes/sold/" +sold,
+         dataType: 'json',
+         success: function(oders) {}
+       })
+})
+
+       $('#displayTableStock').on('click', function(e){
+           var sold = e.target.value;
+           $.ajax({
+               type: "POST",
+               url: "/api/shoes/sold/" + sold,
+               dataType: 'json',
+          success: function(oders) {}
+
+})
+})
+
+
 })
